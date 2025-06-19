@@ -77,14 +77,25 @@ nav a:hover {
   bottom: 30px;
   right: 30px;
   background-color: #00bfa6;
-  color: black;
   border: none;
   padding: 15px;
   border-radius: 50%;
-  font-size: 20px;
   cursor: pointer;
   z-index: 1000;
   display: none;
+  box-shadow: 0 4px 8px rgba(0, 191, 166, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#scrollTopBtn:hover {
+  background-color: #00e6c3;
+  transform: translateY(-3px);
+}
+
+#scrollTopBtn svg {
+  width: 24px;
+  height: 24px;
+  fill: black;
 }
 
 /* Main Section */
