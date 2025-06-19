@@ -37,6 +37,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // Reveal any sections in view immediately on page load
     revealSectionsInView();
 
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    if (scrollBtn) {
+        scrollBtn.addEventListener('click', scrollToTop);
+    }
+
     // Updated openProjectModal function to open in new tab
     window.openProjectModal = function (projectId) {
         const projectImages = document.getElementById(projectId)?.querySelectorAll('img');
