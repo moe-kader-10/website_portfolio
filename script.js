@@ -6,6 +6,17 @@ function toggleNav() {
 
 // Scroll To Top Button
 const scrollBtn = document.getElementById('scrollTopBtn');
+
+// Reveal sections already in view
+function revealSectionsInView() {
+    document.querySelectorAll('.section').forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+            section.classList.add('visible');
+        }
+    });
+}
+
 window.onscroll = () => {
     if (window.scrollY > 300) {
         scrollBtn.style.display = 'block';
@@ -14,12 +25,7 @@ window.onscroll = () => {
     }
 
     // Reveal sections on scroll
-    document.querySelectorAll('.section').forEach(section => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-            section.classList.add('visible');
-        }
-    });
+    revealSectionsInView();
 };
 
 function scrollToTop() {
@@ -28,10 +34,13 @@ function scrollToTop() {
 
 // Project Gallery Functionality - Updated to open in new tab
 document.addEventListener('DOMContentLoaded', function () {
+    // Reveal any sections in view immediately on page load
+    revealSectionsInView();
+
     // Updated openProjectModal function to open in new tab
     window.openProjectModal = function (projectId) {
         const projectImages = document.getElementById(projectId)?.querySelectorAll('img');
-        
+
         if (!projectImages || projectImages.length === 0) {
             console.error('No project images found for:', projectId);
             return;
@@ -134,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <script>
                     const images = ${JSON.stringify(imageUrls)};
                     let currentImageIndex = 0;
-                    
+
                     function loadImage(index) {
                         if (index >= 0 && index < images.length) {
                             currentImageIndex = index;
@@ -143,41 +152,38 @@ document.addEventListener('DOMContentLoaded', function () {
                             document.querySelector('.image-counter').textContent = \`Image \${index + 1} of \${images.length}\`;
                         }
                     }
-                    
+
                     function prevImage() {
                         if (currentImageIndex > 0) {
                             loadImage(currentImageIndex - 1);
                         }
                     }
-                    
+
                     function nextImage() {
                         if (currentImageIndex < images.length - 1) {
                             loadImage(currentImageIndex + 1);
                         }
                     }
-                    
+
                     // Disable right-click and other saving methods
                     document.addEventListener('contextmenu', function(e) {
                         e.preventDefault();
                         alert('Image saving is disabled to protect copyright.');
                     });
-                    
+
                     // Disable keyboard shortcuts for saving
                     document.addEventListener('keydown', function(e) {
-                        // Disable Ctrl+S, Ctrl+Shift+S, etc.
                         if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S')) {
                             e.preventDefault();
                             alert('Image saving is disabled to protect copyright.');
                         }
-                        // Arrow keys for navigation
                         if (e.key === 'ArrowLeft') {
                             prevImage();
                         } else if (e.key === 'ArrowRight') {
                             nextImage();
                         }
                     });
-                    
-                    // Make images non-draggable
+
                     document.getElementById('project-image').setAttribute('draggable', 'false');
                     document.getElementById('project-image').style.userSelect = 'none';
                     document.getElementById('project-image').style.webkitUserSelect = 'none';
