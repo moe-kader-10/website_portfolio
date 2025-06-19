@@ -708,3 +708,35 @@ nav a:hover {
     font-size: 0.8rem;
   }
 }
+
+/* Contact Section Styles */
+#contact {
+  background-color: #000;
+  text-align: center;
+  padding-bottom: 60px;
+}
+
+.contact-info {
+  background-color: #111;
+  padding: 30px 20px;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 255, 255, 0.05);
+}
+
+.contact-info p {
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+.contact-info a {
+  color: #00bfa6;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-info a:hover {
+  color: #00e6c3;
+  text-decoration: underline;
+}
