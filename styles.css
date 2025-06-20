@@ -829,3 +829,25 @@ nav a:hover {
     font-size: 0.95rem;
   }
 }
+
+@media (max-width: 600px) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    padding: 0 10px;
+    gap: 10px;
+  }
+
+  .skill-tile {
+    padding: 10px;
+    height: auto;
+  }
+
+  .skill-tile img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .skill-tile p {
+    font-size: 0.75rem;
+  }
+}
