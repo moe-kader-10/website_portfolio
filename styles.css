@@ -5,6 +5,7 @@ body {
   background-color: #000;
   color: #fff;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 h1, h2 {
@@ -113,6 +114,21 @@ nav a:hover {
   border-radius: 20px;
   margin: 0 auto;
   display: block;
+}
+
+@media (max-width: 768px) {
+  #main .content {
+    flex-direction: column;
+    padding-top: 120px;
+  }
+
+  .profile-img {
+    width: 150px;
+  }
+
+  .text {
+    padding: 0 10px;
+  }
 }
 
 /* Skills Logos */
@@ -750,4 +766,65 @@ nav a:hover {
 .contact-info a:hover {
   color: #00e6c3;
   text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    background-color: #000;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    display: none;
+    gap: 20px;
+    padding: 10px 0;
+    z-index: 1002;
+  }
+
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 1003;
+  }
+}
+
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  nav {
+    display: flex !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 60px 10px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-info {
+    padding: 20px 15px;
+  }
+
+  .contact-info p {
+    font-size: 0.95rem;
+  }
 }
