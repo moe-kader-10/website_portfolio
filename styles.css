@@ -6,7 +6,6 @@ body {
   color: #fff;
   scroll-behavior: smooth;
   overflow-x: hidden;
-  border: 5px solid red; /* For Debugging on Mobile */
 }
 
 h1, h2 {
@@ -196,6 +195,9 @@ nav a:hover {
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 20px;
+  overflow-x: hidden;
+  width: 100%; /* ✅ Add this */
+  box-sizing: border-box; /* ✅ Add this to make padding work correctly */
 }
 
 .skill-tile {
@@ -209,6 +211,8 @@ nav a:hover {
   transition: all 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 255, 255, 0.05);
   height: 120px; /* Fixed height for consistency */
+  width: 100%;
+  max-width: 140px; /* Optional cap */
   border: 1px solid transparent;
 }
 
@@ -837,4 +841,18 @@ nav a:hover {
   .contact-info p {
     font-size: 0.95rem;
   }
+}
+
+/* For Testing */
+
+body {
+  outline: 3px solid red;
+}
+
+.skills-grid {
+  outline: 3px dashed lime;
+}
+
+.skill-tile {
+  outline: 1px solid orange;
 }
