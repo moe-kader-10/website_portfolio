@@ -6,6 +6,7 @@ body {
   color: #fff;
   scroll-behavior: smooth;
   overflow-x: hidden;
+  border: 5px solid red; /* For Debugging on Mobile */
 }
 
 h1, h2 {
@@ -233,6 +234,14 @@ nav a:hover {
   word-break: break-word;
   width: 100%;
   padding: 0 5px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.skills-grid, .skills-section {
+  overflow-x: hidden;
 }
 
 #certifications {
@@ -827,27 +836,5 @@ nav a:hover {
 
   .contact-info p {
     font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .skills-grid {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    padding: 0 10px;
-    gap: 10px;
-  }
-
-  .skill-tile {
-    padding: 10px;
-    height: auto;
-  }
-
-  .skill-tile img {
-    width: 40px;
-    height: 40px;
-  }
-
-  .skill-tile p {
-    font-size: 0.75rem;
   }
 }
