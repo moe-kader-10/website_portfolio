@@ -845,8 +845,3 @@ nav a:hover {
     font-size: 0.95rem;
   }
 }
-
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
