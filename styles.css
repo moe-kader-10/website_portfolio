@@ -183,24 +183,24 @@ nav a:hover {
 }
 
 #skills {
-  padding: 80px 20px;
+  padding: 100px 20px; /* ✅ Increased padding to give more space */
   background-color: #000;
   text-align: center;
-  overflow-x: hidden;   /* ✅ Prevent horizontal spill */
-  width: 100vw;         /* ✅ Ensures full width but no overflow */
+  overflow-x: hidden;
+  width: 100vw;
   box-sizing: border-box;
 }
 
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 20px;
+  gap: 25px; /* ✅ Increased gap to accommodate scaling */
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 25px; /* ✅ Added padding around the grid */
   width: 100%;
   box-sizing: border-box;
-  overflow: hidden; /* ✅ Hide any visual overflow */
+  overflow: visible; /* ✅ Changed from hidden to visible */
 }
 
 .skill-tile {
@@ -209,20 +209,23 @@ nav a:hover {
   align-items: center;
   justify-content: space-between;
   background-color: #111;
-  padding: 15px 10px;
+  padding: 15px 10px 18px 10px; /* ✅ Increased bottom padding for descenders */
   border-radius: 12px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 255, 255, 0.05);
-  height: 120px;
+  height: 125px; /* ✅ Slightly increased height */
   border: 1px solid transparent;
   transform-origin: center;
   will-change: transform;
+  position: relative; /* ✅ Added for better layering */
+  z-index: 1; /* ✅ Base z-index */
 }
 
 .skill-tile:hover {
   transform: scale(1.05);
   border-color: #00bfa6;
-  box-shadow: 0 6px 12px rgba(0, 255, 255, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 255, 255, 0.15); /* ✅ Enhanced shadow */
+  z-index: 10; /* ✅ Higher z-index on hover to ensure it stays on top */
 }
 
 .skill-tile img {
@@ -241,6 +244,11 @@ nav a:hover {
   word-break: break-word;
   width: 100%;
   padding: 0 5px;
+  line-height: 1.2; /* ✅ Better line height for descenders */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 20px; /* ✅ Minimum height to accommodate descenders */
 }
 
 *, *::before, *::after {
@@ -506,8 +514,6 @@ nav a:hover {
   }
 }
 
-/* Add these styles to your existing CSS */
-
 /* Project Tiles - Enhanced Version */
 .tiles {
   display: grid;
@@ -586,7 +592,6 @@ nav a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* Remove padding that was causing offset */
 }
 
 /* Close button - fixed position */
@@ -843,5 +848,31 @@ nav a:hover {
 
   .contact-info p {
     font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #skills {
+    padding: 80px 15px;
+  }
+  
+  .skills-grid {
+    gap: 20px;
+    padding: 20px 10px;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+  
+  .skill-tile {
+    height: 105px; /* ✅ Adjusted for mobile */
+    padding: 12px 8px 15px 8px; /* ✅ Increased bottom padding for mobile too */
+  }
+  
+  .skill-tile img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .skill-tile p {
+    font-size: 0.8rem;
   }
 }
