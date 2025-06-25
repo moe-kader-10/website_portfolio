@@ -186,6 +186,9 @@ nav a:hover {
   padding: 80px 20px;
   background-color: #000;
   text-align: center;
+  overflow-x: hidden;   /* ✅ Prevent horizontal spill */
+  width: 100vw;         /* ✅ Ensures full width but no overflow */
+  box-sizing: border-box;
 }
 
 .skills-grid {
@@ -195,9 +198,9 @@ nav a:hover {
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 20px;
-  overflow-x: hidden;
-  width: 100%; /* ✅ Add this */
-  box-sizing: border-box; /* ✅ Add this to make padding work correctly */
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden; /* ✅ Hide any visual overflow */
 }
 
 .skill-tile {
@@ -208,12 +211,12 @@ nav a:hover {
   background-color: #111;
   padding: 15px 10px;
   border-radius: 12px;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 255, 255, 0.05);
-  height: 120px; /* Fixed height for consistency */
-  width: 100%;
-  max-width: 140px; /* Optional cap */
+  height: 120px;
   border: 1px solid transparent;
+  transform-origin: center;
+  will-change: transform;
 }
 
 .skill-tile:hover {
@@ -843,16 +846,7 @@ nav a:hover {
   }
 }
 
-/* For Testing */
-
-body {
-  outline: 3px solid red;
-}
-
-.skills-grid {
-  outline: 3px dashed lime;
-}
-
-.skill-tile {
-  outline: 1px solid orange;
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
