@@ -876,3 +876,40 @@ nav a:hover {
     font-size: 0.8rem;
   }
 }
+
+@media (max-width: 768px) {
+  /* Make nav bar more visible */
+  header {
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 2px 10px rgba(0, 255, 255, 0.3);
+  }
+  
+  /* Make nav links more visible */
+  nav a {
+    background-color: rgba(0, 191, 166, 0.1);
+    border: 1px solid rgba(0, 191, 166, 0.3);
+  }
+  
+  nav a:hover {
+    background-color: #00bfa6;
+    color: black;
+  }
+  
+  /* Make hamburger menu more visible */
+  .menu-toggle div {
+    background-color: #00bfa6;
+    height: 4px;
+    margin: 5px 0;
+  }
+  
+  /* Make scroll-to-top button more visible */
+  #scrollTopBtn {
+    background-color: rgba(0, 191, 166, 0.9);
+    padding: 18px;
+    box-shadow: 0 4px 12px rgba(0, 191, 166, 0.4);
+  }
+  
+  #scrollTopBtn:hover {
+    background-color: #00e6c3;
+  }
+}
