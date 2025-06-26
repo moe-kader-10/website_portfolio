@@ -878,14 +878,6 @@ nav a:hover {
 }
 
 @media (max-width: 768px) {
-  /* --- Super Visible Nav Bar --- */
-  header {
-    background-color: #000 !important; /* Solid black */
-    border-bottom: 2px solid #00bfa6 !important; /* Bright teal border */
-    box-shadow: 0 4px 15px rgba(0, 191, 166, 0.5) !important; /* Glow effect */
-    padding: 15px 0 !important;
-  }
-
   /* --- Mobile Menu Button (Hamburger) --- */
   .menu-toggle div {
     background-color: #00bfa6 !important; /* Bright teal */
@@ -922,7 +914,6 @@ nav a:hover {
     width: 60px !important;
     height: 60px !important;
     padding: 0 !important;
-    border: 2px solid white !important;
     box-shadow: 0 0 15px #00bfa6 !important;
     opacity: 1 !important;
   }
