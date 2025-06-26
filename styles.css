@@ -878,12 +878,20 @@ nav a:hover {
 }
 
 @media (max-width: 768px) {
-  /* --- Mobile Menu Button (Hamburger) --- */
+  /* --- Solid Navigation Bar --- */
+  header {
+    background-color: #000 !important;
+    padding: 15px 0 !important;
+    border-bottom: 2px solid #00bfa6 !important;
+    box-shadow: 0 4px 12px rgba(0, 191, 166, 0.6) !important;
+  }
+
+  /* --- Hamburger Menu Icon --- */
   .menu-toggle div {
-    background-color: #00bfa6 !important; /* Bright teal */
+    background-color: #00bfa6 !important;
     height: 4px !important;
-    margin: 6px 0 !important;
-    box-shadow: 0 0 5px #00bfa6 !important; /* Glow */
+    margin: 5px 0 !important;
+    width: 30px !important;
   }
 
   /* --- Mobile Menu Links --- */
@@ -893,39 +901,37 @@ nav a:hover {
   }
 
   nav a {
-    background-color: rgba(0, 191, 166, 0.2) !important;
-    border: 1px solid #00bfa6 !important;
-    color: #fff !important;
+    background-color: #00bfa6 !important;
+    color: #000 !important;
     font-weight: bold !important;
-    margin: 0 15px !important;
+    margin: 8px 20px !important;
     padding: 12px !important;
     text-align: center !important;
+    border-radius: 8px !important;
   }
 
   nav a:hover {
-    background-color: #00bfa6 !important;
-    color: #000 !important;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.3) !important;
+    background-color: #00ffdd !important;
   }
 
-  /* --- Scroll-to-Top Button --- */
+  /* --- Solid Scroll-to-Top Button --- */
   #scrollTopBtn {
     background-color: #00bfa6 !important;
     width: 60px !important;
     height: 60px !important;
     padding: 0 !important;
-    box-shadow: 0 0 15px #00bfa6 !important;
-    opacity: 1 !important;
+    border: none !important;
+    box-shadow: 0 0 20px rgba(0, 191, 166, 0.8) !important;
   }
 
   #scrollTopBtn svg {
-    width: 30px !important;
-    height: 30px !important;
-    filter: drop-shadow(0 0 2px black) !important;
+    width: 28px !important;
+    height: 28px !important;
+    filter: none !important;
   }
 
   #scrollTopBtn:hover {
     background-color: #00ffdd !important;
-    transform: scale(1.1) !important;
+    transform: scale(1.1) translateY(-3px) !important;
   }
 }
